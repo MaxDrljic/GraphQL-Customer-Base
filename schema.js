@@ -44,21 +44,23 @@ const CustomerType = new GraphQLObjectType({
 // Root Query
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
-    customer: {
-        type: CustomerType,
-        args: {
-            id: {GraphQLString}
-        },
-        resolve(parentValue, args) {
-            for (let i = 0; i < customers.length; i++) {
-                if (customers[i].id === args.id) {
-                    return customers[i];
+    fields: {
+        customer: {
+            type: CustomerType,
+            args: {
+                id: { type: GraphQLString }
+            },
+            resolve(parentValue, args) {
+                for (let i = 0; i < customers.length; i++) {
+                    if (customers[i].id === args.id) {
+                        return customers[i];
+                    }
                 }
             }
         }
-    }
+    }, 
 });
 
 module.exports = new GraphQLSchema({
-    
+    query: RootQuery
 });
