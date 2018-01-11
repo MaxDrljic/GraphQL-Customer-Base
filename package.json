@@ -4,7 +4,8 @@
   "description": "Project made with GraphQL & NodeJS",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server"
+    "start": "nodemon server",
+    "json:server": "json-server --watch data.json"
   },
   "author": "Max Drljić",
   "license": "MIT",

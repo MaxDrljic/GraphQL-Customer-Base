@@ -7,6 +7,7 @@ const {
     GraphQLNonNull
 } = require('graphql');
 
+/*
 // Hardcoded data
 const customers = [
     {
@@ -28,6 +29,7 @@ const customers = [
         age: 20
     }
 ]
+*/
 
 
 // Customer Type
@@ -57,8 +59,14 @@ const RootQuery = new GraphQLObjectType({
                     }
                 }
             }
+        },
+        customers: {
+            type: new GraphQLList(CustomerType),
+            resolve(parentValue, args) {
+               return customers; 
+            }
         }
-    }, 
+    }
 });
 
 module.exports = new GraphQLSchema({
