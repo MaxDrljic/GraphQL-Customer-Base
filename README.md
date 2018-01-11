@@ -1,4 +1,4 @@
-Simple GraphQL implementation by creating queries from records stored in JSON server. Records could be retreived, deleted and updated with Axios.
+Simple GraphQL implementation by creating queries which extend and fulfill records stored in JSON server. Records could be retreived, deleted and updated with Axios.
 
 SETUP :
 
